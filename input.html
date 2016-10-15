@@ -30,6 +30,16 @@ $(function(){
     }
   }); 
 });
+$("#input_form").submit(function(eventObj) {
+  $('<input>').attr('type', 'hidden')
+      .attr('name', "id")
+      .attr('value', sessionid)
+      console.log(sessionid);
+      .appendTo('#input_form');
+    return true;
+});
+
+});
 </script>
 <!-- /////////  -->
 <!-- /////////  -->
@@ -38,6 +48,7 @@ $(function(){
 
 <body>
   <script>
+    var sessionid;
     window.fbAsyncInit = function() {
     FB.init({
       appId      : '1723832821273679',
@@ -50,6 +61,9 @@ $(function(){
     FB.getLoginStatus(function(response) {
       statusChangeCallback(response);
     });
+    FB.api('/me', 'GET', {fields: 'first_name,last_name,name,id'}, function(response) {
+          sessionid = response.id;
+    });)
   }
   </script>
 
@@ -60,7 +74,7 @@ $(function(){
    <button id ="addFieldBtn">Add field</button>
   <button class ="removeBtn">Remove</button>
 
-  <form action="/inputFood" method="post" role="form">
+  <form action="/inputFood" method="post" role="form" id="input_form">
       <div class="entryFields">
       <div class="form-group">
       <div class="btn-group">
