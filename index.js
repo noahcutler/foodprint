@@ -24,7 +24,7 @@ app.get('/input', function (request, response) {
 });
 
 
-app.post('/submit_meal', function (request, response) {
+app.post('/inputFood', function (request, response) {
 	//enabling CORS
 	response.header("Access-Control-Allow-Origin", "*");
     response.header("Access-Control-Allow-Headers", "X-Requested-With");
