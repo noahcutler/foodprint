@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login!</title>
+  <meta charset="UTF-8">
+  <script type="text/javascript" src="//connect.facebook.net/en_US/sdk.js"></script>
+</head>
+<body>
+  <script>
+ 
+  window.fbAsyncInit = function() {
+     FB.init({
+      appId      : '1723832821273679',
+      xfbml      : true,
+      version    : 'v2.6'
+    });
+    FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);});
+    console.log(response.status)
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
+    console.log(response.status)
+  </script>
+
+</body>
+</html>
