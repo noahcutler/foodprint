@@ -1,0 +1,9 @@
+{
+	"name": "foodprint",
+	"version": "0.0.1",
+	"dependencies": {
+			"express": "latest",
+			"mongodb": "latest",
+			"body-parser": "latest"
+	}
+}
