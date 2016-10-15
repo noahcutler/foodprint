@@ -133,13 +133,22 @@ Main Components
   background-size: cover;
 }
 .cd-section:nth-of-type(3) .cd-half-block:first-of-type {
-  background-image: url("../img/img-2.jpg");
+  background-image: url("../img/img-7.jpg");
   background-size: cover;
 }
 .cd-section:nth-of-type(4) .cd-half-block:first-of-type {
-  background-image: url("../img/img-3.jpg");
+  background-image: url("../img/img-2.jpg");
   background-size: cover;
 }
+.cd-section:nth-of-type(5) .cd-half-block:first-of-type {
+  background-image: url("../img/img-8.jpg");
+  background-size: cover;
+}
+.cd-section:nth-of-type(6) .cd-half-block:first-of-type {
+  background-image: url("../img/img-10.jpg");
+  background-size: cover;
+}
+
 @media only screen and (min-width: 1170px) {
   .cd-half-block {
     height: 100vh !important;
