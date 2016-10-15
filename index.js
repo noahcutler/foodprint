@@ -23,9 +23,27 @@ app.get('/input', function (request, response) {
 	});
 });
 
-app.post('/submit_meal', function (request, response) {
 
+app.post('/submit_meal', function (request, response) {
+	//enabling CORS
+	response.header("Access-Control-Allow-Origin", "*");
+    response.header("Access-Control-Allow-Headers", "X-Requested-With");
+
+    console.log(request);
+
+//    var foods{};
+//
+//  db.collection('carbon', function(er, collection) {
+//    	if(!er){
+//    		collection.find('name':)
+//    	}
+//    	else {
+//    		response.send('error!');
+//    	}
+//    })
 })
 
 
-app.listen(process.env.PORT || 3000);
+app.listen(process.env.PORT || 3000, function() {
+	console.log('Node app is running on port', app.get('port'));
+});
