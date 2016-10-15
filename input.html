@@ -46,12 +46,26 @@ $("#input_form").submit(function(eventObj) {
 </head>
 
 <body>
-<<<<<<< HEAD
 <script>
-=======
-
-
- <div class="site-wrapper">
+    var sessionid;
+    window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1723832821273679',
+      cookie     : true,  // enable cookies to allow the server to access 
+                          // the session
+      xfbml      : true,  // parse social plugins on this page
+      version    : 'v2.5' // use graph api version 2.5
+    });
+    function checkLoginState() {
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
+  }
+  FB.api('/me', 'GET', {fields: 'first_name,last_name,name,id'}, function(response) {
+            sessionid = response.id;
+  });
+  </script>
+   <div class="site-wrapper">
       <div class="site-wrapper-inner">
        <div class="cover-container">
         <nav class="navbar navbar-inverse">
@@ -88,29 +102,6 @@ $("#input_form").submit(function(eventObj) {
     </div>
   </div>
 </div>
-
-
-
-  <script>
-    var sessionid;
->>>>>>> e751bffc01252b7f9ed41e6649dacfe86bb3b6aa
-    window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '1723832821273679',
-      cookie     : true,  // enable cookies to allow the server to access 
-                          // the session
-      xfbml      : true,  // parse social plugins on this page
-      version    : 'v2.5' // use graph api version 2.5
-    });
-    function checkLoginState() {
-    FB.getLoginStatus(function(response) {
-      statusChangeCallback(response);
-    });
-  }
-  FB.api('/me', 'GET', {fields: 'first_name,last_name,name,id'}, function(response) {
-            sessionid = response.id;
-  });
-  </script>
 
  <div class= "container">
  <h1 class="header">What Did You Eat Today?</h1>
