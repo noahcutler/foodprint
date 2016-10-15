@@ -16,6 +16,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
 <script> 
+function redirect() {
+  window.location.replace("good_work.html");
+  return false;
+}
 $(function(){
   $('#addFieldBtn').click(function(){
     var i = $('.entryFields').children('div').length + 1;
@@ -110,7 +114,7 @@ $("#input_form").submit(function(eventObj) {
    <button id ="addFieldBtn">Add field</button>
   <button class ="removeBtn">Remove</button>
 
-  <form action="/inputFood" method="post" role="form" id="input_form">
+  <form action="/inputFood" method="post" role="form" id="input_form" onsubmit="return redirect()">
       <div class="entryFields">
       <div class="form-group">
       <div class="btn-group">
@@ -161,7 +165,7 @@ $("#input_form").submit(function(eventObj) {
       <input type="number" name="quantity1" min="1" max="99"></input> 
       </div>
       </div>
-     <input type="submit" value="Submit"></input>
+     <input type="submit" value="Submit"</input>
      <br/>
      </form>
 </div>
