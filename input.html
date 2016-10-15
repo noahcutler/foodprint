@@ -37,6 +37,22 @@ $(function(){
 </head>
 
 <body>
+  <script>
+    window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1723832821273679',
+      cookie     : true,  // enable cookies to allow the server to access 
+                          // the session
+      xfbml      : true,  // parse social plugins on this page
+      version    : 'v2.5' // use graph api version 2.5
+    });
+    function checkLoginState() {
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
+  }
+  </script>
+
  <div class= "container">
  <h1 class="header">What Did You Eat Today?</h1>
   <br/>
@@ -93,7 +109,6 @@ $(function(){
         </select>
         <input type="number" name="quantity1" min="1" max="99"> 
       </div>
-      
       </div>
      <input type="submit" value="Submit">
      <br/>
