@@ -21,7 +21,7 @@
 $(function(){
   $('#addFieldBtn').click(function(){
     var i = $('.entryFields').children('div').length + 1;
-    $( '<div class="form-group"><label for="dropdown'+i+'">Extra Entry</label><select class="form-control" id="dropdown'+i+'"><option value="Red Meat">Red Meat</option><option value="Poultry">Poultry</option><option value="Pork">Pork</option><option value="Dairy">Dairy</option><option value="Seafood">Seafood</option><option value="Vegetables">Vegetables</option><option value="Fruit">Fruit</option><option value="Carbohydrates">Carbohydrates</option><option value="Processed Snacks">Processed Snacks</option><option value="Soft Drinks">Soft Drinks</option><option value="Beer">Beer</option><option value="Wine">Wine</option><option value="Spirits">Spirits</option><option value="Coffee">Coffee</option></select></div>' ).appendTo( ".entryFields" );
+    $( '<div class="form-group"><select class="form-control" id="dropdown'+i+'"><option value="Red Meat">Red Meat</option><option value="Poultry">Poultry</option><option value="Pork">Pork</option><option value="Dairy">Dairy</option><option value="Seafood">Seafood</option><option value="Vegetables">Vegetables</option><option value="Fruit">Fruit</option><option value="Carbohydrates">Carbohydrates</option><option value="Processed Snacks">Processed Snacks</option><option value="Soft Drinks">Soft Drinks</option><option value="Beer">Beer</option><option value="Wine">Wine</option><option value="Spirits">Spirits</option><option value="Coffee">Coffee</option></select></div>' ).appendTo( ".entryFields" );
   });
 });
 $(function(){
@@ -32,16 +32,28 @@ $(function(){
     }
   }); 
 });
+
+function submitform(){
+        alert("Sending Json");
+        var xhr = new XMLHttpRequest();
+        xhr.open(form.method, form.action, true);
+        xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+        var j = {
+            "entry": ,
+            "food": ,
+        };
+        xhr.send(JSON.stringify(j));
 </script>
 
 </head>
 
 <body>
-
+ <h1>What did you eat today?</h1>
+   <button id ="addFieldBtn">Add field</button>
+ <button class ="removeBtn">Remove</button><br/>
  <form action="/inputFood" method="post" role="form">
       <div class="entryFields">
       <div class="form-group">
-        <label for="foodDropdown">TestDropdown</label>
         <select name = "food" class="form-control" id="foodDropdown">
 			<option value="Red Meat">Red Meat</option>
 			<option value="Poultry">Poultry</option>
@@ -61,8 +73,6 @@ $(function(){
       </div>
       </div>
      </form>
-  <button id ="addFieldBtn">Add field</button>
-  <button class ="removeBtn">Remove</button><br/><br/>
 
 </body>
 
