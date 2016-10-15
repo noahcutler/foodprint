@@ -27,7 +27,7 @@ $(function(){
 $(function(){
   $(document).on('click', '.removeBtn', function() {
     var i = $('.entryFields').children('div').length;
-    if( i > 4 ) {
+    if( i >= 2 ) {
       $('#dropdown'+(i)).parent().remove();  
     }
   }); 
