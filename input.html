@@ -19,7 +19,7 @@
 $(function(){
   $('#addFieldBtn').click(function(){
     var i = $('.entryFields').children('div').length + 1;
-    $( '<div class="form-group"><select class="form-control" id="dropdown'+i+'"><option value="Red Meat">Red Meat</option><option value="Red Meat">Red Meat</option><option value="Poultry">Poultry</option><option value="Pork">Pork</option><option value="Dairy">Dairy</option><option value="Seafood">Seafood</option><option value="Vegetables">Vegetables</option><option value="Fruit">Fruit</option><option value="Carbohydrates">Carbohydrates</option><option value="Processed Snacks">Processed Snacks</option><option value="Soft Drinks">Soft Drinks</option><option value="Beer">Beer</option><option value="Wine">Wine</option><option value="Spirits">Spirits</option><option value="Coffee">Coffee</option></select></div>' ).appendTo( ".entryFields" );
+    $( '<div class="form-group"><select class="form-control" id="dropdown'+i+'"><option value="Red Meat">Red Meat</option><option value="Red Meat">Red Meat</option><option value="Poultry">Poultry</option><option value="Pork">Pork</option><option value="Dairy">Dairy</option><option value="Seafood">Seafood</option><option value="Vegetables">Vegetables</option><option value="Fruit">Fruit</option><option value="Carbohydrates">Carbohydrates</option><option value="Processed Snacks">Processed Snacks</option><option value="Soft Drinks">Soft Drinks</option><option value="Beer">Beer</option><option value="Wine">Wine</option><option value="Spirits">Spirits</option><option value="Coffee">Coffee</option></select><input type="number" name="quantity1" min="1" max="99"></input> </div>' ).appendTo( ".entryFields" );
   });
 });
 $(function(){
@@ -86,6 +86,7 @@ $(function(){
       <option value="Spirits">Spirits</option>
       <option value="Coffee">Coffee</option>
     </select>
+
   </div>
 </div> 
 
@@ -106,11 +107,11 @@ $(function(){
 			<option value="Wine">Wine</option>
 			<option value="Spirits">Spirits</option>
 			<option value="Coffee">Coffee</option>
-        </select>
-        <input type="number" name="quantity1" min="1" max="99"> 
+      </select>
+      <input type="number" name="quantity1" min="1" max="99"></input> 
       </div>
       </div>
-     <input type="submit" value="Submit">
+     <input type="submit" value="Submit"></input>
      <br/>
      </form>
 </div>
