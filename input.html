@@ -34,8 +34,9 @@ $("#input_form").submit(function(eventObj) {
   $('<input>').attr('type', 'hidden')
       .attr('name', "id")
       .attr('value', sessionid)
-      console.log(sessionid);
       .appendTo('#input_form');
+
+      console.log(sessionid);
     return true;
 });
 
