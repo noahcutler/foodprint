@@ -39,7 +39,6 @@ $("#input_form").submit(function(eventObj) {
       console.log(sessionid);
     return true;
 });
-
 </script>
 <!-- /////////  -->
 <!-- /////////  -->
@@ -47,8 +46,7 @@ $("#input_form").submit(function(eventObj) {
 </head>
 
 <body>
-  <script>
-    var sessionid;
+<script>
     window.fbAsyncInit = function() {
     FB.init({
       appId      : '1723832821273679',
@@ -61,10 +59,10 @@ $("#input_form").submit(function(eventObj) {
     FB.getLoginStatus(function(response) {
       statusChangeCallback(response);
     });
-    FB.api('/me', 'GET', {fields: 'first_name,last_name,name,id'}, function(response) {
-          sessionid = response.id;
-    });
   }
+  FB.api('/me', 'GET', {fields: 'first_name,last_name,name,id'}, function(response) {
+            sessionid = response.id;
+  });
   </script>
 
  <div class= "container">
