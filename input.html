@@ -5,23 +5,21 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
-<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 <title>Input</title>
 
-<!-- Bootstrap -->
+<!-- BOOTSTRAP  -->
+<!-- /////////  -->
+<!-- /////////  -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" integrity="sha384-2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous">
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<link href="input.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="bootstrap/js/bootstrap.min.js"></script>
 <script> 
-<!-- TODO: Find way to show selection for each new field, test "i" naming -->
 $(function(){
   $('#addFieldBtn').click(function(){
     var i = $('.entryFields').children('div').length + 1;
-    $( '<div class="form-group"><select name=food'+i+' class="form-control" id="dropdown'+i+'"><option value="Red Meat">Red Meat</option><option value="Poultry">Poultry</option><option value="Pork">Pork</option><option value="Dairy">Dairy</option><option value="Seafood">Seafood</option><option value="Vegetables">Vegetables</option><option value="Fruit">Fruit</option><option value="Carbohydrates">Carbohydrates</option><option value="Processed Snacks">Processed Snacks</option><option value="Nuts/seeds">Nuts/seeds</option><option value="Soft Drinks">Soft Drinks</option><option value="Beer">Beer</option><option value="Wine">Wine</option><option value="Spirits">Spirits</option><option value="Coffee">Coffee</option></select><input type="number" name="quantity" min="1" max="99"></div>' ).appendTo( ".entryFields" );
+    $( '<div class="form-group"><select class="form-control" id="dropdown'+i+'"><option value="Red Meat">Red Meat</option><option value="Red Meat">Red Meat</option><option value="Poultry">Poultry</option><option value="Pork">Pork</option><option value="Dairy">Dairy</option><option value="Seafood">Seafood</option><option value="Vegetables">Vegetables</option><option value="Fruit">Fruit</option><option value="Carbohydrates">Carbohydrates</option><option value="Processed Snacks">Processed Snacks</option><option value="Soft Drinks">Soft Drinks</option><option value="Beer">Beer</option><option value="Wine">Wine</option><option value="Spirits">Spirits</option><option value="Coffee">Coffee</option></select></div>' ).appendTo( ".entryFields" );
   });
 });
 $(function(){
@@ -33,37 +31,30 @@ $(function(){
   }); 
 });
 </script>
-
+<!-- /////////  -->
+<!-- /////////  -->
+<!-- /////////  -->
 </head>
 
 <body>
- <h1>What did you eat today?</h1>
+ <div class= "container">
+ <h1 class="header">What Did You Eat Today?</h1>
+  <br/>
+  <br/>
    <button id ="addFieldBtn">Add field</button>
- <button class ="removeBtn">Remove</button><br/>
- <form action="/inputFood" method="post" role="form">
+  <button class ="removeBtn">Remove</button>
+
+  <form action="/inputFood" method="post" role="form">
       <div class="entryFields">
       <div class="form-group">
-      <select name = "food1" class="form-control" id="foodDropdown1">
-			<option value="Red Meat">Red Meat</option>
-			<option value="Poultry">Poultry</option>
-			<option value="Pork">Pork</option>
-			<option value="Dairy">Dairy</option>
-			<option value="Seafood">Seafood</option>
-			<option value="Vegetables">Vegetables</option>
-			<option value="Fruit">Fruit</option>
-			<option value="Carbohydrates">Carbohydrates</option>
-			<option value="Processed Snacks">Processed Snacks</option>
-      <option value="Nuts/seeds">Nuts/seeds</option>
-			<option value="Soft Drinks">Soft Drinks</option>
-			<option value="Beer">Beer</option>
-			<option value="Wine">Wine</option>
-			<option value="Spirits">Spirits</option>
-			<option value="Coffee">Coffee</option>
-        </select>
-        <input type="number" name="quantity1" min="1" max="99"> 
-      </div>
-      <div class="form-group">
-      <select name = "food1" class="form-control" id="foodDropdown2">
+      <div class="btn-group">
+  </button>
+
+ <div class="row">
+  <div class= "col-md-12 dropdown-menu">
+
+    <select name = "food" class="form-control" id="foodDropdown">
+      <option value="Click Here">Click Here</option>
       <option value="Red Meat">Red Meat</option>
       <option value="Poultry">Poultry</option>
       <option value="Pork">Pork</option>
@@ -73,64 +64,21 @@ $(function(){
       <option value="Fruit">Fruit</option>
       <option value="Carbohydrates">Carbohydrates</option>
       <option value="Processed Snacks">Processed Snacks</option>
-      <option value="Nuts/seeds">Nuts/seeds</option>
       <option value="Soft Drinks">Soft Drinks</option>
       <option value="Beer">Beer</option>
       <option value="Wine">Wine</option>
       <option value="Spirits">Spirits</option>
       <option value="Coffee">Coffee</option>
-        </select>
-        <input type="number" name="quantity2" min="1" max="99">
+    </select>
+  </div>
+</div> 
+
       </div>
-
-
-      <div class="form-group">
-      <select name = "food1" class="form-control" id="foodDropdown3">
-      <option value="Red Meat">Red Meat</option>
-      <option value="Poultry">Poultry</option>
-      <option value="Pork">Pork</option>
-      <option value="Dairy">Dairy</option>
-      <option value="Seafood">Seafood</option>
-      <option value="Vegetables">Vegetables</option>
-      <option value="Fruit">Fruit</option>
-      <option value="Carbohydrates">Carbohydrates</option>
-      <option value="Processed Snacks">Processed Snacks</option>
-      <option value="Nuts/seeds">Nuts/seeds</option>
-      <option value="Soft Drinks">Soft Drinks</option>
-      <option value="Beer">Beer</option>
-      <option value="Wine">Wine</option>
-      <option value="Spirits">Spirits</option>
-      <option value="Coffee">Coffee</option>
-        </select>
-        <input type="number" name="quantity3" min="1" max="99">
-      </div>
-
-
-      <div class="form-group">
-      <select name = "food1" class="form-control" id="foodDropdown4">
-      <option value="Red Meat">Red Meat</option>
-      <option value="Poultry">Poultry</option>
-      <option value="Pork">Pork</option>
-      <option value="Dairy">Dairy</option>
-      <option value="Seafood">Seafood</option>
-      <option value="Vegetables">Vegetables</option>
-      <option value="Fruit">Fruit</option>
-      <option value="Carbohydrates">Carbohydrates</option>
-      <option value="Processed Snacks">Processed Snacks</option>
-      <option value="Nuts/seeds">Nuts/seeds</option>
-      <option value="Soft Drinks">Soft Drinks</option>
-      <option value="Beer">Beer</option>
-      <option value="Wine">Wine</option>
-      <option value="Spirits">Spirits</option>
-      <option value="Coffee">Coffee</option>
-        </select>
-        <input type="number" name="quantity4" min="1" max="99">  
-      </div>
-
       </div>
      <input type="submit" value="Submit">
+     <br/>
      </form>
-
+</div>
 </body>
 
 

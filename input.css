@@ -1,0 +1,32 @@
+body
+{
+    background-image: url("image.jpg");
+}
+
+.header {
+	text-align: center;
+	color: white;
+	padding-top: 5%;
+}
+
+button
+{
+    display:block;
+
+
+}
+
+#addFieldBtn, .removeBtn
+{
+    margin:0 auto;	
+	display:inline-block;
+}
+
+input 
+{
+	  margin:0 auto;
+      display:block;
+
+}
+
+.cent_button {}
