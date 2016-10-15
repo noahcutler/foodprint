@@ -9,6 +9,8 @@ var db = MongoClient.connect(mongoUri, function(error, databaseConnection) {
 	db = databaseConnection;
 });
 
+app.use(express.static(__dirname));
+
 app.get('/', function (request, response) {
 	response.sendFile('login.html', {
 		root: __dirname
